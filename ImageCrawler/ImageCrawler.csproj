@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{75927164-4826-46BE-85D6-7181BE5E8BF7}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImageCrawler</RootNamespace>
+    <AssemblyName>ImageCrawler</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>en</TargetCulture>
+    <ProductName>Image Crawler</ProductName>
+    <PublisherName>Danny Kunz</PublisherName>
+    <SuiteName>Image Crawler</SuiteName>
+    <ApplicationRevision>4</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\ImageCrawler.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>11429056D8F4908DF0AA1ECAE8D111D638F4E596</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>ImageCrawler_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CrawlerJobPartFilter.cs" />
+    <Compile Include="Crawler\Controller\CrawlerController.cs" />
+    <Compile Include="Crawler\Common\CrawlerImageFilter.cs" />
+    <Compile Include="Crawler\CrawlerJob\CrawlerJobContext.cs" />
+    <Compile Include="Crawler\Filter\IPageFilter.cs" />
+    <Compile Include="Crawler\Filter\PageFilter.cs" />
+    <Compile Include="Crawler\Filter\RobotsTxt\RobotsTxt.cs" />
+    <Compile Include="Crawler\View\ImageLogger\CrawlerImageLogger.cs" />
+    <Compile Include="Crawler\CrawlerJob\CrawlerJobPartAnalyzePage.cs" />
+    <Compile Include="Crawler\CrawlerJob\CrawlerJobPartDownload.cs" />
+    <Compile Include="Crawler\CrawlerJob\CrawlerJobPartGenerateSubJobs.cs" />
+    <Compile Include="Crawler\CrawlerJob\CrawlerJobPartInitialPageLock.cs" />
+    <Compile Include="Crawler\CrawlerJob\CrawlerJobPartRetrieveImages.cs" />
+    <Compile Include="Crawler\CrawlerJob\CrawlerJobPool.cs" />
+    <Compile Include="Crawler\CrawlerJob\CrawlerJob.cs" />
+    <Compile Include="Crawler\View\GUI\CrawlerJobView.cs" />
+    <Compile Include="Crawler\View\GUI\CrawlerProcessInformation.cs" />
+    <Compile Include="DialogImageDetailView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogImageDetailView.Designer.cs">
+      <DependentUpon>DialogImageDetailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Crawler\Controller\ICrawlerController.cs" />
+    <Compile Include="Crawler\View\ImageLogger\ICrawlerImageLogger.cs" />
+    <Compile Include="Crawler\View\ImageLogger\Report\ICrawlerImageReport.cs" />
+    <Compile Include="Crawler\CrawlerJob\ICrawlerJob.cs" />
+    <Compile Include="Crawler\CrawlerJob\ICrawlerJobPart.cs" />
+    <Compile Include="Crawler\CrawlerJob\ICrawlerJobPool.cs" />
+    <Compile Include="Crawler\View\GUI\ICrawlerJobView.cs" />
+    <Compile Include="Crawler\Common\CrawlerImage.cs" />
+    <Compile Include="Crawler\Backlog\IImageBacklog.cs" />
+    <Compile Include="Crawler\Backlog\ImageBacklog.cs" />
+    <Compile Include="Crawler\Backlog\IPageBacklog.cs" />
+    <Compile Include="Crawler\Backlog\IPageBacklogOptimizer.cs" />
+    <Compile Include="Crawler\Common\Page.cs" />
+    <Compile Include="Crawler\Backlog\PageBacklog.cs" />
+    <Compile Include="Crawler\Backlog\PageBacklogOptimizer.cs" />
+    <Compile Include="Crawler\Backlog\PageBacklogOptimizerAnalyzerAndClassifierTrippleGram.cs" />
+    <Compile Include="Crawler\View\ImageLogger\Report\StoredCrawlerImageReportAbstract.cs" />
+    <Compile Include="Crawler\View\ImageLogger\Report\StoredCrawlerImageReportHtml.cs" />
+    <Compile Include="Crawler\View\ImageLogger\Report\StoredCrawlerImageReportDecorator.cs" />
+    <Compile Include="Crawler\View\ImageLogger\Report\StoredCrawlerImageReportXml.cs" />
+    <Compile Include="Util\StreamConnector.cs" />
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogImageDetailView.resx">
+      <DependentUpon>DialogImageDetailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ImageCrawler_TemporaryKey.pfx" />
+    <None Include="Properties\app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\play.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\download.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\btn_donate_paypal_LG.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Donation\paypal_donation.html" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
