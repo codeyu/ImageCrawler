@@ -62,7 +62,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -82,9 +82,6 @@
       <Project>{75927164-4826-46BE-85D6-7181BE5E8BF7}</Project>
       <Name>ImageCrawler</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ImageCrawlerConsole_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
